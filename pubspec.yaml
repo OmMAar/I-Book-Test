@@ -250,6 +250,14 @@ dependencies:
   #Can also be used with placeholder and error widgets.
   cached_network_image: ^3.1.0+1
 
+  # A Dart implementation of Leaflet to provide a Map widget for Flutter apps
+  flutter_map: ^0.13.0
+
+
+  # A library for generating fake data.
+  # faker is heavily inspired by the Python package faker and, the Ruby package ffaker.
+  faker: ^2.0.0
+
 
 
   # ===================== External login ============================
@@ -292,13 +300,7 @@ flutter:
 
   # To add assets to your application, add an assets section, like this:
   assets:
-    - assets/images/
-    - assets/images/temp/
-    - assets/images/background/
-    - assets/images/general/
-    - assets/icons/
-    - assets/icons/svg/
-    - assets/icons/background/
+    - assets/image/
     - assets/lang/
 
   # An image asset can refer to one or more resolution-specific "variants", see

@@ -3,11 +3,11 @@ import 'dart:async';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:my_structure/blocs/simple_bloc_delegate.dart';
-import 'package:my_structure/ui/my_app.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
 import 'di/components/service_locator.dart';
+import 'ui/my_app.dart';
 
 final GoogleSignIn googleSignIn = GoogleSignIn(
   scopes: [

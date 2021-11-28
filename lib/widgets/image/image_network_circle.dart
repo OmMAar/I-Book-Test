@@ -1,6 +1,8 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:my_structure/constants/app_constants.dart';
+import 'package:my_structure/widgets/image/image_assets_circle.dart';
 
 class ImageNetworkCircleWidget extends StatefulWidget {
   final String? imageUrl;
@@ -20,7 +22,7 @@ class ImageNetworkCircleWidget extends StatefulWidget {
     this.imageHeight,
     this.imageWidth,
     this.isCache = false,
-    this.imageBorderRadius =0.0,
+    this.imageBorderRadius = 0.0,
     this.imageBorderRadiusTopLeft = true,
     this.imageBorderRadiusTopRight = true,
     this.imageBorderRadiusBottomLeft = true,
@@ -71,10 +73,16 @@ class _CustomImageDemoState extends State<ImageNetworkCircleWidget>
             width: widget.imageWidth,
             height: widget.imageHeight,
             child: CachedNetworkImage(
-              imageUrl: widget.imageUrl??"",
-              placeholder: (context, url) =>
-              const CircularProgressIndicator(),
-              errorWidget: (context, url, error) => const Icon(Icons.error),
+              imageUrl: widget.imageUrl ?? "",
+              placeholder: (context, url) => Padding(
+                padding: const EdgeInsets.all(AppDimens.space8),
+                child: Center(child: const CircularProgressIndicator()),
+              ),
+              errorWidget: (context, url, error) => ImageAssetCircleWidget(
+                imageUrl: AppAssets.placeHolder,
+                imageWidth: widget.imageWidth,
+                imageHeight: widget.imageHeight,
+              ),
               height: widget.imageHeight,
               width: widget.imageWidth,
               fit: widget.boxFit,

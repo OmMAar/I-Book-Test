@@ -1,4 +1,5 @@
 import 'package:my_structure/ui/home/pages/home_page.dart';
+import 'package:my_structure/ui/location/pages/map_page.dart';
 import 'package:my_structure/ui/main/main_root.dart';
 import 'package:my_structure/ui/splash/splash.dart';
 import 'package:flutter/material.dart';
@@ -20,6 +21,7 @@ class Routes {
   /// main pages
   static const String mainRootPage = '/ui/MainRootPage/';
   static const String home = '/home';
+  static const String mapPage = '/MapPagePage';
 
 
 
@@ -34,6 +36,7 @@ class Routes {
 
     mainRootPage: (BuildContext context) => MainRootPage(),
     home: (BuildContext context) => HomeScreen(),
+    mapPage: (BuildContext context) => MapPage(),
 
   };
 

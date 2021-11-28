@@ -37,23 +37,6 @@ class _SplashScreenState extends State<SplashScreen> {
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
-                  // FadeInDownBig(
-                  //   child: Container(
-                  //     width: 200,
-                  //     height: 200,
-                  //     child: Text(
-                  //       "My Structure",
-                  //      style: appTextStyle.normalTSBasic.copyWith(
-                  //        color: AppColors.mainColor,
-                  //        fontWeight: FontWeight.bold
-                  //      ),
-                  //     ),
-                  //   ),
-                  //   duration: Duration(milliseconds: 1500),
-                  // ),
-                  // VerticalPadding(
-                  //   percentage: 0.05,
-                  // ),
                   Container(
                     width: double.infinity,
                     alignment: AlignmentDirectional.center,
@@ -135,6 +118,6 @@ class _SplashScreenState extends State<SplashScreen> {
     //   Navigator.of(context).pushReplacementNamed(Routes.signInPage);
     // }
     await Future.delayed(Duration(milliseconds: 2400), () {});
-    Navigator.of(context).pushReplacementNamed(Routes.mainRootPage);
+    Navigator.of(context).pushReplacementNamed(Routes.mapPage);
   }
 }

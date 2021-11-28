@@ -1,14 +1,14 @@
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_staggered_animations/flutter_staggered_animations.dart';
-import 'package:my_structure/common/users/user_grid_view_with_filter_pagination.dart';
-import 'package:provider/provider.dart';
 import 'package:my_structure/common/widgets/base_body.dart';
 import 'package:my_structure/common/widgets/vertical_padding.dart';
 import 'package:my_structure/constants/app_constants.dart';
 import 'package:my_structure/stores/language/language_store.dart';
 import 'package:my_structure/stores/theme/theme_store.dart';
 import 'package:my_structure/utils/device/device_utils.dart';
+import 'package:my_structure/utils/routes/routes.dart';
+import 'package:provider/provider.dart';
 
 class HomeScreen extends StatefulWidget {
   @override
@@ -22,9 +22,7 @@ class _HomeScreenState extends State<HomeScreen>
   late LanguageStore _languageStore;
   late TabController tabController;
 
-
   var _cancelToken = CancelToken();
-
 
   @override
   void didChangeDependencies() {
@@ -33,10 +31,8 @@ class _HomeScreenState extends State<HomeScreen>
     // initializing stores
     _languageStore = Provider.of<LanguageStore>(context);
     _themeStore = Provider.of<ThemeStore>(context);
-   // _user = getIt<UserManagementDataSource>().getUserInfo();
+    // _user = getIt<UserManagementDataSource>().getUserInfo();
   }
-
-
 
   @override
   void initState() {
@@ -46,7 +42,6 @@ class _HomeScreenState extends State<HomeScreen>
     tabController.addListener(() {
       if (tabController.indexIsChanging) setState(() {});
     });
-
   }
 
   @override
@@ -93,7 +88,26 @@ class _HomeScreenState extends State<HomeScreen>
     return Container(
       height: height,
       width: width,
-      child: UserGridViewWithFilterPaginationWidget(cancelToken:_cancelToken,width: width ,),
+      child: Column(
+        children: [
+          RaisedButton(
+            onPressed: () {
+              Navigator.of(context).pushNamed(Routes.mapPage);
+            },
+            child: Container(
+              width: 200,
+              height: 50,
+              child: Center(
+                child: Text(
+                  "To map",
+                  style: appTextStyle.smallTSBasic
+                      .copyWith(color: AppColors.mainColor),
+                ),
+              ),
+            ),
+          )
+        ],
+      ),
     );
   }
 
@@ -129,7 +143,6 @@ class _HomeScreenState extends State<HomeScreen>
       ),
     );
   }
-
 
   @override
   void dispose() {

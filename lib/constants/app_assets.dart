@@ -2,7 +2,7 @@ class AppAssets {
   AppAssets._();
 
   /// splash screen assets
-  static const String appLogo = "assets/icons/ic_appicon.png";
+  static const String placeHolder = "assets/image/place_holder.png";
 
   /// login screen assets
 
